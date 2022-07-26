@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "strict": false,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "es2015",
+    "composite": true,
+    "resolveJsonModule": true,
+    "outDir": "dist",
+    "rootDir": "lib"
+  },
+  "exclude": ["lib/*.json", "<rootDir>/__tests__/*", "dist"]
+}
