@@ -20,6 +20,15 @@
       },
       "contactPoints": {
         "type": "string"
+      },
+      "secureConnectBundle": {
+        "type": "string"
+      },
+      "username": {
+        "type": "string"
+      },
+      "password": {
+        "type": "string"
       }
     }
   },
