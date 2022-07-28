@@ -46,7 +46,7 @@ export default class RedisQueryService implements QueryService {
     try {
       result = await client.execute(query);
     } catch (err) {
-      client.disconnect();
+      await client.shutdown();
       throw new QueryError('Query could not be completed', err.message, {});
     }
 
@@ -66,12 +66,30 @@ export default class RedisQueryService implements QueryService {
     const contactPoints = sourceOptions.contactPoints.split(',');
     const localDataCenter = sourceOptions.localDataCenter;
     const keyspace = sourceOptions.keyspace;
+    const username = sourceOptions.username;
+    const password = sourceOptions.password;
+    const secureConnectBundle = sourceOptions.secureConnectBundle;
 
-    const client = new cassandra.Client({
-      contactPoints,
-      localDataCenter,
-      keyspace
-    });
+    let client;
+
+    if(secureConnectBundle) {
+      client = new cassandra.Client({
+        cloud: {
+          secureConnectBundle,
+        },
+        credentials: {
+          username,
+          password,
+        }});
+    } else {
+      client = new cassandra.Client({
+        contactPoints,
+        localDataCenter,
+        keyspace
+      });
+    }
+
+    await client.connect();
 
     return client;
   }

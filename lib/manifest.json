@@ -32,11 +32,20 @@
     },
     "contactPoints": {
       "value": ""
+    },
+    "secureConnectBundle": {
+      "value": ""
+    },
+    "username": {
+      "value": ""
+    },
+    "password": {
+      "value": ""
     }
   },
   "properties": {
     "localDataCenter": {
-      "label": "localDataCenter",
+      "label": "local data center",
       "key": "localDataCenter",
       "type": "text",
       "description": "Enter local data center"
@@ -48,10 +57,28 @@
       "description": "Enter keyspace"
     },
     "contactPoints": {
-      "label": "contactPoints",
+      "label": "contact points",
       "key": "contactPoints",
       "type": "text",
       "description": "Enter contact points"
+    },
+    "secureConnectBundle": {
+      "label": "secure connect bundle path",
+      "key": "secureConnectBundle",
+      "type": "text",
+      "description": "Enter secure connect bundle path"
+    },
+    "username": {
+      "label": "username",
+      "key": "username",
+      "type": "text",
+      "description": "Enter username"
+    },
+    "password": {
+      "label": "password",
+      "key": "password",
+      "type": "text",
+      "description": "Enter password"
     }
   },
   "required": [
